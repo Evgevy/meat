@@ -1,0 +1,36 @@
+mixin form()
+    section.form 
+        .form__content
+            .form__inner
+                .form__form
+                    h2.form__title Остались вопросы? Задавайте!
+                    p.form__text Заполните форму ниже и наш специалист в ближайшее время свяжется с вами
+                    form(method="post")
+                        +custom-input({
+                            label: "Ваше имя",
+                            type: "text",
+                            name: "name",
+                            placeholder: "Введите своё имя"
+                        }).form__input
+                        .form__box
+                            +custom-input({
+                                label: "Ваш номер телефона",
+                                type: "tel",
+                                name: "phone",
+                                placeholder: "+7(_ _ _) - _ _ _-_ _-_ _"
+                            }).form__input.inner
+                            +custom-input({
+                                label: "Ваш email",
+                                type: "email",
+                                name: "email-adress",
+                                placeholder: "index@mail.ru"
+                            }).form__input.inner
+                        +custom-textarea({
+                            label: "Ваш вопрос",
+                            name: "question",
+                            placeholder: "Напишите сообщение"
+                        }).form__input-text
+                        button(type="submit").header__btn Отправить
+                        p.form__agreement Нажимая на кнопку «Отправить»,  Вы соглашаетесь с <a href="#" class="form__sub-link">политикой обработки персональных данных</a>
+                .form__image 
+                    img(src="img/content/phone.png" alt="Логотип Рация").form__img 

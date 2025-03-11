@@ -1,0 +1,23 @@
+mixin intro()
+    section.intro 
+        .intro__bg 
+            img(src="img/content/intro.webp" alt="Фон блока Интро")
+            img(src="img/content/about-m.webp" alt="Фон блока Интро")
+        .container 
+            .intro__wrapper 
+                h1.intro__title ПРОДАЖА МЯСА <span>ОПТОМ</span>
+                p.intro__text по всей России и странам СНГ
+                ul.intro__list 
+                    li.intro__item 
+                        p.intro__item-text Импортируем мясо из стран Латинской Америки
+                        +icon('about1', 60, 60)
+                    li.intro__item
+                        p.intro__item-text Прямые поставки от крупнейших производителей РФ и Белоруссии
+                        +icon('about2', 60, 60)
+                    li.intro__item 
+                        p.intro__item-text Доставим от 1 кг до вагона
+                        +icon('about3', 60, 60)
+                    li.intro__item 
+                        p.intro__item-text Собственное производство на территории России 
+                        +icon('about4', 60, 60)
+                button(type="button").intro__btn ХОЧУ СТАТЬ ВАШИМ ПАРТНЕРОМ

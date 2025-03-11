@@ -1,0 +1,226 @@
+.intro {
+    position: relative;
+    
+    &__bg {
+        position: absolute;
+        top: 0%; 
+        left: 0; 
+        width: 100%;
+        height: 1050px;
+        z-index: -1; 
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include vp-767 {
+                display: none;
+            }
+        }
+
+        img:nth-child(2) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+
+            @include vp-767 {
+                display: block;
+            }
+        }
+
+        @include vp-767 {
+            height: 1200px;
+        }
+
+        @media screen and (max-width: 500px) {
+            height: 1000px;
+        }
+        
+        @include vp-389 {
+            height: 900px;
+        }
+    }
+
+    &__bg::before {
+        content: '';
+        position: absolute; 
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        background-image: 
+            linear-gradient(to right, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(0, 0, 0, 0) 70%), 
+            linear-gradient(to bottom, 
+            rgba(0, 0, 0, 0.9) 10%, 
+            rgba(0, 0, 0, 0) 35%), 
+            linear-gradient(to top, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(0, 0, 0, 0) 70%);
+        z-index: 1; 
+
+        @include vp-767 {
+            background-image: 
+            linear-gradient(to right, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(0, 0, 0, 0) 90%), 
+            linear-gradient(to bottom, 
+            rgba(0, 0, 0, 0.9) 10%, 
+            rgba(0, 0, 0, 0) 90%), 
+            linear-gradient(to top, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(0, 0, 0, 0) 90%);
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        top: 350px;
+
+        @media screen and (max-width: 500px) {
+            top: 250px;
+        }
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-size: 65px;
+        font-weight: 700;
+        line-height: 100%;
+        color: $color-default-white;
+        margin: 0 0 30px;
+        span {
+            color: #E31E24;
+        }
+
+        @include vp-767 {
+            font-size: 40px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        @include vp-389 {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        font-family: 'Roboto';
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 100%;
+        color: $color-default-white;
+        margin: 0 0 60px;
+
+        @include vp-767 {
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 25px;
+        }
+
+        @include vp-389 {
+            font-size: 20px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+        margin-bottom: 60px;
+        max-width: 900px;
+        width: 100%;
+
+        @include vp-767 {
+            max-width: 100%;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        max-width: 440px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+
+        svg {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+
+            @include vp-767 {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @include vp-767 {
+            max-width: 100%;
+        }
+    }
+
+    &__item-text {
+        font-family: 'Roboto';
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 120%;
+        color: $color-default-white;
+        margin: 0;
+
+        @media screen and (max-width: 500px) {
+            font-size: 16px;
+        }
+
+        @include vp-389 {
+            font-size: 14px;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 0;
+        max-width: 395px;
+        width: 100%;
+        font-family: 'Roboto';
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 130%;
+        color: $color-default-white;
+        background: #E31E24;
+        text-transform: uppercase;
+        padding: 24px;
+
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            inset: 0;
+            background:  linear-gradient(90deg, #7D1114 0%, #E31E24 49%, #7D1114 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity .2s linear;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 500px) {
+            padding: 16px;
+            max-width: 100%;
+            font-size: 14px;
+        }
+    }
+    
+}

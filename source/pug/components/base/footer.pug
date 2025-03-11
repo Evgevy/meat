@@ -1,0 +1,41 @@
+mixin footer()
+  footer.footer
+    .footer__content
+      .footer__inner
+        .footer__box
+          a.footer__logo(href="/", aria-label="Переход на главную")
+            img(src="img/sprite/logo-f.svg")
+            img(src="img/sprite/logo-fs.svg")
+          .footer__docs 
+            p ООО «Охранное агентство «Страж»
+            p ИНН: 4909911985
+            p ОГРН: 1044900023112
+        .footer__documents
+          .footer__number 
+            h4.footer__name Адрес
+            p.footer__adress 685030, Россия,  г.Магадан, ул. Пролетарская, дом 84, корпус 2
+          .footer__contacts 
+            h4.footer__name Контакты
+            ul.footer__contacts-list 
+              li.footer__contacts-item 
+                p.footer__contacts-name Email:
+                a(href="mailto:straj_08@mail.ru").footer__contacts-link straj_08@mail.ru
+              li.footer__contacts-item 
+                p.footer__contacts-name Телефон:
+                a(href="tel:+79148578058").footer__contacts-link +7 (914) 857-80-58
+        ul.footer__menu 
+          li.footer__item 
+            a(href="#") Услуги
+          li.footer__item 
+            a(href="#") О компании
+          li.footer__item 
+            a(href="#") Вакансии
+          li.footer__item 
+            a(href="#") Контакты
+        .footer__info 
+          p.footer__spam Этот сайт защищен от спама службой reCAPTCHA Google. <a href="#" class="footer__spam-link">Политика конфиденциальности</a>/<a href="#" class="footer__spam-link">Условия предоставления услуг</a>
+        .footer__low 
+          a(href="#").footer__low-link Публичная оферта
+          a(href="#").footer__low-link Политика персональных данных
+          a(href="#").footer__autor Сайт разработан студией  Van Gogh Link 
+
