@@ -34,6 +34,8 @@
   }
 
   &__button  {
+    position: relative;
+    z-index: 0;
     font-family: 'Roboto';
     font-size: 16px;
     font-weight: 500;
@@ -46,6 +48,22 @@
     gap: 15px;
     padding: 14.5px 20px;
     margin: 0 100px;
+
+    &::before {
+      display: block;
+      position: absolute;
+      content: "";
+      inset: 0;
+      background:  linear-gradient(90deg, #7D1114 0%, #E31E24 49%, #7D1114 100%);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity .2s linear;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+    
     .header__box {
       display: flex;
       flex-direction: column;

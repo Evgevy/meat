@@ -1,9 +1,9 @@
-mixin popup()
-    .popup--feedback
+mixin popup-partner()
+    .popup-partner--thanks
         .popup__titles 
             button.btn-reset.modal__close-button(type="button" arial-label="Закрыть попап" data-close-modal)
                 +icon("close-icon", 40, 40)
-            h2.popup__title Заказать звонок
+            h2.popup__title Заявка на поставку мяса оптом
             p.popup__text Стать нашимLorem ipsum is placeholder text commonly used in the graphic, print
         form(method="post")
             .popup__form
@@ -17,4 +17,18 @@ mixin popup()
                     name: "phone",
                     placeholder: "Ваш номер телефона"
                 }).form__input
+                +custom-input({
+                    type: "email",
+                    name: "email",
+                    placeholder: "e-mail"
+                }).form__input
+                +custom-input({
+                    type: "text",
+                    name: "company",
+                    placeholder: "Название компании"
+                }).form__input
+                +custom-textarea({
+                    name: "question",
+                    placeholder: "Какая продукция интересует"
+            }).form__input-text
             button(type="submit" data-open-modal="thanks").form__btn Оставить заявку
