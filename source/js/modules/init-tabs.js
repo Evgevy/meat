@@ -27,6 +27,8 @@ const initTabs = () => {
     const tabMenu = document.querySelector('.header__tab-menu');
     const box = document.querySelector('.header__box');
     const header = document.querySelector('.header');
+    const toggleMenuButton = document.querySelector('[data-toggle-menu]');
+
     button.addEventListener('click', function () {
         tabMenu.classList.toggle('active');
         box.classList.toggle('active');
@@ -35,7 +37,17 @@ const initTabs = () => {
         document.body.classList.toggle('no-scroll', tabMenu.classList.contains('active'));
 
     });
-    
+    toggleMenuButton.addEventListener('click', function() {
+        
+        if (tabMenu.classList.contains('active')) {
+          
+          tabMenu.classList.remove('active');
+          box.classList.remove('active');
+          header.classList.remove('active');
+      
+          document.body.classList.remove('no-scroll');
+        }
+    });
 
 }
 
